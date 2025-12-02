@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+enum Months {JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER};
+
+int main() {
+    int days[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+    for (int month = JANUARY; month <= DECEMBER; month++) {
+        switch (month) {
+            case JANUARY: printf("January has %d days\n", days[month]); break;
+            case FEBRUARY: printf("February has %d days\n", days[month]); break;
+            case MARCH: printf("March has %d days\n", days[month]); break;
+            case APRIL: printf("April has %d days\n", days[month]); break;
+            case MAY: printf("May has %d days\n", days[month]); break;
+            case JUNE: printf("June has %d days\n", days[month]); break;
+            case JULY: printf("July has %d days\n", days[month]); break;
+            case AUGUST: printf("August has %d days\n", days[month]); break;
+            case SEPTEMBER: printf("September has %d days\n", days[month]); break;
+            case OCTOBER: printf("October has %d days\n", days[month]); break;
+            case NOVEMBER: printf("November has %d days\n", days[month]); break;
+            case DECEMBER: printf("December has %d days\n", days[month]); break;
+        }
+    }
+
+    return 0;
+}

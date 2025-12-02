@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <string.h>
+
+int areAnagrams(char s[], char t[]) {
+    int countS[26] = {0};
+    int countT[26] = {0};
+
+    int lenS = strlen(s);
+    int lenT = strlen(t);
+
+    if (lenS != lenT) {
+        return 0; 
+    }
+
+    for (int i = 0; i < lenS; i++) {
+        countS[s[i] - 'a']++;
+        countT[t[i] - 'a']++;
+    }
+
+    for (int i = 0; i < 26; i++) {
+        if (countS[i] != countT[i]) {
+            return 0;
+        }
+    }
+
+    return 1;
+}
+
+int main() {
+    char s[1000], t[1000];
+    printf("Enter first string: ");
+    scanf("%s", s);
+    printf("Enter second string: ");
+    scanf("%s", t);
+
+    if (areAnagrams(s, t)) {
+        printf("Anagram\n");
+    } else {
+        printf("Not Anagram\n");
+    }
+
+    return 0;
+}

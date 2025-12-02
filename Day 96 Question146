@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+struct Date {
+    int day, month, year;
+};
+
+struct Employee {
+    char name[50];
+    int id;
+    struct Date join_date;
+};
+
+int main() {
+    struct Employee e;
+    scanf("%s %d %d %d %d", e.name, &e.id, 
+          &e.join_date.day, &e.join_date.month, &e.join_date.year);
+    printf("%s %d %d/%d/%d\n", e.name, e.id, 
+           e.join_date.day, e.join_date.month, e.join_date.year);
+    return 0;
+}

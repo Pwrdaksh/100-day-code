@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    FILE *file;
+    char filename[100], text[1000];
+
+    printf("Enter the filename: ");
+    scanf("%s", filename);
+
+    file = fopen(filename, "a");
+    if (file == NULL) {
+        printf("Error opening file.\n");
+        return 1;
+    }
+
+    printf("Enter a new line of text to append: ");
+    getchar();
+    fgets(text, sizeof(text), stdin);
+
+    fprintf(file, "%s", text);
+
+    fclose(file);
+
+    printf("Text appended successfully.\n");
+
+    return 0;
+}

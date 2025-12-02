@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    FILE *inputFile = fopen("input.txt", "r");
+    if (inputFile == NULL) {
+        printf("Error opening input.txt\n");
+        return 1;
+    }
+
+    FILE *outputFile = fopen("output.txt", "w");
+    if (outputFile == NULL) {
+        printf("Error opening output.txt\n");
+        fclose(inputFile);
+        return 1;
+    }
+
+    int ch;
+    while ((ch = fgetc(inputFile)) != EOF) {
+        if (islower(ch)) {
+            ch = toupper(ch);
+        }
+        fputc(ch, outputFile);
+    }
+
+    fclose(inputFile);
+    fclose(outputFile);
+
+    printf("Conversion completed. Check output.txt\n");
+
+    return 0;
+}
